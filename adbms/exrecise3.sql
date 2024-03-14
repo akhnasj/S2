@@ -27,11 +27,13 @@ CREATE TABLE SECTION (
     FOREIGN KEY (Course_number) REFERENCES COURSE(Course_number)
 );
 
-CREATE TABLE GRADE_REPORT (
-	Student_number INT PRIMARY KEY,
-    Section_identifier INT,
-    Grade VARCHAR(10),
-    FOREIGN KEY (Section_identifier) REFERENCES SECTION(Section_identifier)
+CREATE TABLE Grade_report (
+	student_number INT,
+    section_identifier INT,
+    grade VARCHAR(10),
+    PRIMARY KEY (student_number, section_identifier),
+    FOREIGN KEY (student_number) REFERENCES Student(student_number),
+    FOREIGN KEY (section_identifier) REFERENCES Section(section_identifier)
 );
 
 CREATE TABLE PREREQUISITE (
@@ -106,4 +108,40 @@ SELECT * FROM Seniors;
 -- 07
 SELECT Course_name FROM Course
 JOIN SECTION ON SECTION.Course_number=COURSE.Course_number
-WHERE Instructor="King" AND YEAR 
+WHERE Instructor="King" AND YEAR BETWEEN 07 AND 08;
+
+-- 07
+SELECT course_name FROM Course
+JOIN Section ON Section.course_number = Course.course_number
+WHERE instructor="King" AND YEAR BETWEEN 07 AND 08;
+
+-- 08
+SELECT Section.course_number, Section.semester, Section.year, COUNT(Student.name) FROM Section
+JOIN Course on Course.course_number = Section.course_number
+JOIN Student ON Student.major = Course.department
+WHERE Section.instructor="King"
+GROUP BY Section.course_number, Section.semester, Section.year;
+
+-- 09
+SELECT Student.name, Course.course_name, Course.course_number, Course.credit_hours, Section.semester, Section.year, Grade_report.grade
+FROM Student
+JOIN Grade_report ON Grade_report.student_number = Student.student_number
+JOIN Section ON Section.section_identifier = Grade_report.section_identifier
+JOIN Course ON Course.course_number = Section.course_number
+WHERE Student.class = "4" AND Student.major = "CS";
+
+-- 10
+INSERT INTO Student VALUES ("Johnson", 25, 1, "Math");
+UPDATE Student SET class = 2 WHERE name = "Smith";
+INSERT INTO Course VALUES ("Knowledge Engineering", "CS4390", 3, "CS");
+DELETE FROM Student WHERE name = "Smith" AND student_number = 17;
+
+
+-- Contents
+SELECT * FROM Student;
+SELECT * FROM Course;
+SELECT * FROM Section;
+SELECT * FROM Grade_report;
+SELECT * FROM Prerequisite;
+
+
