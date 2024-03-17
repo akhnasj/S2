@@ -27,24 +27,31 @@ So if you have an SQL query that you write over and over again, save it as a sto
 You can also pass parameters to a stored procedure, so that the stored procedure can act based on the parameter value(s) that is passed.
 
 ```sql
-    CREATE PROCEDURE procedure_name
-    AS
-    sql_statement
-    GO;
+CREATE PROCEDURE procedure_name
+AS
+sql_statement
+GO;
 ```
 
-### Some of The Most Important SQL Commands
-**SELECT** - extracts data from a database\
-**UPDATE** - updates data in a database\
-**DELETE** - deletes data from a database\
-**INSERT INTO** - inserts new data into a database\
+## Some of The Most Important SQL Commands
+## 1. DDL Commands
+DDL commands are used to define, modify, and delete the structure of database objects such as tables, indexes, and schemas.
+
 **CREATE DATABASE** - creates a new database\
 **ALTER DATABASE** - modifies a database\
 **CREATE TABLE** - creates a new table\
 **ALTER TABLE** - modifies a table\
 **DROP TABLE** - deletes a table\
-**CREATE INDEX** - creates an index (search key)\
-**DROP INDEX** - deletes an index\
+**TRUNCATE** - Remove all records from a table, but   the table structure and its columns remain intact
+
+## 2. DML Commands
+DML commands are used to manipulate data stored in database objects. These commands are used to perform CRUD operations (Create, Read, Update, Delete) on the data within the database.
+
+**SELECT** - extracts data from a database\
+**UPDATE** - updates data in a database\
+**DELETE** - deletes data from a database\
+**INSERT INTO** - inserts new data into a database
+
 
 [SQL Keywords](https://www.w3schools.com/sql/sql_ref_keywords.asp)
 
@@ -62,6 +69,255 @@ Wildcard characters are used with the LIKE operator.
 |-	|Represents any single character within the specified range *|
 |{}|	Represents any escaped character **|
 
+## STATEMENTS
+
+**1. SELECT** 
+
+Retrieves data from a database.  
+`column1, column2` determines which columns to be displayed.
+```
+SELECT column1, column2, ...
+FROM table_name;
+``` 
+
+Return all columns
+
+```sql
+SELECT * FROM table_name;
+```
+
+Return only DISTINCT (different) values
+
+```sql
+SELECT DISTINCT column1, column2, ...
+FROM table_name;
+```
+
+By using the DISTINCT keyword in a function called COUNT, we can return the number of different values in a column.
+
+```sql
+SELECT COUNT(DISTINCT column_name) 
+FROM table_name;
+```
+
+**2. SELECT INTO**\
+Copies data from one table into a new table . Can use `IN`, `AS` operators alongside.
+
+```sql
+SELECT column1, column2, column3, ...    \\*
+INTO newtable [IN externaldb]
+FROM oldtable
+WHERE condition;
+```
+
+**3. INSERT INTO**\
+To insert new records in a table.
+
+```sql
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+```
+
+Adding values for all the columns of the table but order of the values is in the same order
+
+```sql
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...);
+```
+
+To insert multiple rows of data
+
+```sql
+INSERT INTO Customers (column1, column2, column3, ...) 
+VALUES (value11, value12, value13, ...),
+(value21, value22, value23, ...),
+(value31, value32, value33, ...);
+```
+
+**4. INSERT INTO SELECT**\
+Copies data from one table and inserts it into another table.
+Requires that the data types in source and target tables match.
+
+```sql
+INSERT INTO table2
+SELECT * FROM table1
+WHERE condition;
+```
+
+Copy only some columns from one table into another table.
+
+```sql
+INSERT INTO table2 (column1, column2, column3, ...)
+SELECT column1, column2, column3, ...
+FROM table1
+WHERE condition;    
+```
+
+**5. UPDATE**\
+ To modify the existing records in a table
+If you omit the WHERE clause, all records in the table will be updated.
+
+```sql
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+```
+
+**6.DELETE**\
+To delete existing records in a table. If you omit the WHERE clause, all records in the table will be deleted.
+
+```sql
+DELETE FROM table_name WHERE condition;
+```
+
+To delete all rows in a table without deleting the table. This means that the table structure, attributes, and indexes will be intact.
+
+```sql
+DELETE FROM table_name;
+```
+
+To delete the table completely.
+
+```sql
+DROP TABLE Customers;
+```
+
+**7. CASE**\
+Goes through conditions and returns a value when the first condition is met (like an if-then-else statement). If no conditions are true, it returns the value in the ELSE clause. If there is no ELSE part and no conditions are true, it returns NULL. 
+
+```sql
+CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    WHEN conditionN THEN resultN
+    ELSE result
+END;
+```
+**8. CREATE VIEW**\
+View is a virtual table based on the result-set of an SQL statement.
+
+```sql
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+```
+
+## DATABASE COMMANDS
+
+**1. CREATE DATABASE**\
+Used to create a new SQL database.
+
+```sql
+CREATE DATABASE databasename;
+```
+
+To check the **list** of databases :
+
+```sql
+SHOW DATABASES;
+```
+
+**2. DROP DATABASE**\
+Used to drop an existing SQL database.\
+Deleting a database will result in loss of complete information stored in the database.
+
+```sql
+DROP DATABASE databasename;
+```
+
+**3. BACKUP DATABASE**\
+Used in SQL Server to create a full back up of an existing SQL database.
+
+```sql
+BACKUP DATABASE databasename
+TO DISK = 'filepath';
+```
+
+
+A differential back up only backs up the parts of the database that have changed since the last full database backup.\
+A differential back up reduces the back up time (since only the changes are backed up).
+
+```sql
+BACKUP DATABASE databasename
+TO DISK = 'filepath'
+WITH DIFFERENTIAL;
+```
+
+**4. CREATE TABLE**\
+Used to create a new table in a database.
+
+```sql
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+....
+);
+```
+
+A copy of an existing table can also be created using CREATE TABLE.\
+The new table gets the same column definitions. All columns or specific columns can be selected.\
+If you create a new table using an existing table, the new table will be filled with the existing values from the old table.
+
+```sql
+CREATE TABLE new_table_name AS
+    SELECT column1, column2,...
+    FROM existing_table_name
+    WHERE ....;
+```
+
+**5. DROP TABLE**\
+Used to drop an existing table in a database.
+
+```sql
+DROP TABLE table_name;
+```
+
+**6. TRUNCATE TABLE**\
+Used to delete the data inside a table, but not the table itself.
+
+```sql
+TRUNCATE TABLE table_name;
+```
+
+**7. ALTER TABLE**\
+Used to add, delete, or modify columns in an existing table.\
+Used to add and drop various constraints on an existing table.
+
+##### i) ADD COLUMN
+
+```sql
+ALTER TABLE table_name
+ADD column_name datatype;
+```
+
+##### ii) DROP COLUMN
+
+```sql
+ALTER TABLE table_name
+DROP COLUMN column_name;
+```
+
+##### iii) RENAME COLUMN
+
+```sql
+ALTER TABLE table_name
+RENAME COLUMN old_name to new_name;
+```
+
+##### iv) ALTER/MODIFY COLUMN datatype
+
+```sql
+ALTER TABLE table_name
+ALTER COLUMN column_name datatype;
+```
+
+```sql
+ALTER TABLE table_name
+MODIFY COLUMN column_name datatype;
+```
+
 ## CLAUSES
 
 **1. WHERE**\
@@ -69,9 +325,9 @@ Wildcard characters are used with the LIKE operator.
  Used in UPDATE, DELETE also.
 
 ```sql
-    SELECT column1, column2, ...
-    FROM table_name
-    WHERE condition;
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
 ```
 
 | Operator | Description |	
@@ -344,254 +600,7 @@ SELECT column_name(s) FROM table2;
 
 UNION operator selects only distinct values by default. To allow duplicate values, use UNION ALL.
 
-## STATEMENTS
 
-**1. SELECT** 
-
-Retrieves data from a database.  
-`column1, column2` determines which columns to be displayed.
-```
-SELECT column1, column2, ...
-FROM table_name;
-``` 
-
-Return all columns
-
-```sql
-SELECT * FROM table_name;
-```
-
-Return only DISTINCT (different) values
-
-```sql
-SELECT DISTINCT column1, column2, ...
-FROM table_name;
-```
-
-By using the DISTINCT keyword in a function called COUNT, we can return the number of different values in a column.
-
-```sql
-SELECT COUNT(DISTINCT column_name) 
-FROM table_name;
-```
-
-**2. SELECT INTO**\
-Copies data from one table into a new table . Can use `IN`, `AS` operators alongside.
-
-```sql
-SELECT column1, column2, column3, ...    \\*
-INTO newtable [IN externaldb]
-FROM oldtable
-WHERE condition;
-```
-
-**3. INSERT INTO**\
-To insert new records in a table.
-
-```sql
-INSERT INTO table_name (column1, column2, column3, ...)
-VALUES (value1, value2, value3, ...);
-```
-
-Adding values for all the columns of the table but order of the values is in the same order
-
-```sql
-INSERT INTO table_name
-VALUES (value1, value2, value3, ...);
-```
-
-To insert multiple rows of data
-
-```sql
-INSERT INTO Customers (column1, column2, column3, ...) 
-VALUES (value11, value12, value13, ...),
-(value21, value22, value23, ...),
-(value31, value32, value33, ...);
-```
-
-**4. INSERT INTO SELECT**\
-Copies data from one table and inserts it into another table.
-Requires that the data types in source and target tables match.
-
-```sql
-INSERT INTO table2
-SELECT * FROM table1
-WHERE condition;
-```
-
-Copy only some columns from one table into another table.
-
-```sql
-INSERT INTO table2 (column1, column2, column3, ...)
-SELECT column1, column2, column3, ...
-FROM table1
-WHERE condition;    
-```
-
-**5. UPDATE**\
- To modify the existing records in a table
-If you omit the WHERE clause, all records in the table will be updated.
-
-```sql
-UPDATE table_name
-SET column1 = value1, column2 = value2, ...
-WHERE condition;
-```
-
-**6.DELETE**\
-To delete existing records in a table. If you omit the WHERE clause, all records in the table will be deleted.
-
-```sql
-DELETE FROM table_name WHERE condition;
-```
-
-To delete all rows in a table without deleting the table. This means that the table structure, attributes, and indexes will be intact.
-
-```sql
-DELETE FROM table_name;
-```
-
-To delete the table completely.
-
-```sql
-DROP TABLE Customers;
-```
-
-**7. CASE**\
-Goes through conditions and returns a value when the first condition is met (like an if-then-else statement). If no conditions are true, it returns the value in the ELSE clause. If there is no ELSE part and no conditions are true, it returns NULL. 
-
-```sql
-CASE
-    WHEN condition1 THEN result1
-    WHEN condition2 THEN result2
-    WHEN conditionN THEN resultN
-    ELSE result
-END;
-```
-**8. CREATE VIEW**\
-View is a virtual table based on the result-set of an SQL statement.
-
-```sql
-CREATE VIEW view_name AS
-SELECT column1, column2, ...
-FROM table_name
-WHERE condition;
-```
-
-## DATABASE COMMANDS
-
-**1. CREATE DATABASE**\
-Used to create a new SQL database.
-
-```sql
-CREATE DATABASE databasename;
-```
-
-To check the **list** of databases :
-
-```sql
-SHOW DATABASES;
-```
-
-**2. DROP DATABASE**\
-Used to drop an existing SQL database.\
-Deleting a database will result in loss of complete information stored in the database.
-
-```sql
-DROP DATABASE databasename;
-```
-
-**3. BACKUP DATABASE**\
-Used in SQL Server to create a full back up of an existing SQL database.
-
-```sql
-BACKUP DATABASE databasename
-TO DISK = 'filepath';
-```
-
-
-A differential back up only backs up the parts of the database that have changed since the last full database backup.\
-A differential back up reduces the back up time (since only the changes are backed up).
-
-```sql
-BACKUP DATABASE databasename
-TO DISK = 'filepath'
-WITH DIFFERENTIAL;
-```
-
-**4. CREATE TABLE**\
-Used to create a new table in a database.
-
-```sql
-CREATE TABLE table_name (
-    column1 datatype,
-    column2 datatype,
-    column3 datatype,
-....
-);
-```
-
-A copy of an existing table can also be created using CREATE TABLE.\
-The new table gets the same column definitions. All columns or specific columns can be selected.\
-If you create a new table using an existing table, the new table will be filled with the existing values from the old table.
-
-```sql
-CREATE TABLE new_table_name AS
-    SELECT column1, column2,...
-    FROM existing_table_name
-    WHERE ....;
-```
-
-**5. DROP TABLE**\
-Used to drop an existing table in a database.
-
-```sql
-DROP TABLE table_name;
-```
-
-**6. TRUNCATE TABLE**\
-Used to delete the data inside a table, but not the table itself.
-
-```sql
-TRUNCATE TABLE table_name;
-```
-
-**7. ALTER TABLE**\
-Used to add, delete, or modify columns in an existing table.\
-Used to add and drop various constraints on an existing table.
-
-##### i) ADD COLUMN
-
-```sql
-ALTER TABLE table_name
-ADD column_name datatype;
-```
-
-##### ii) DROP COLUMN
-
-```sql
-ALTER TABLE table_name
-DROP COLUMN column_name;
-```
-
-##### iii) RENAME COLUMN
-
-```sql
-ALTER TABLE table_name
-RENAME COLUMN old_name to new_name;
-```
-
-##### iv) ALTER/MODIFY COLUMN datatype
-
-```sql
-ALTER TABLE table_name
-ALTER COLUMN column_name datatype;
-```
-
-```sql
-ALTER TABLE table_name
-MODIFY COLUMN column_name datatype;
-```
 
 ## SQL Constraints
 
