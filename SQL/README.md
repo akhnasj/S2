@@ -104,7 +104,7 @@ FROM table_name;
 Copies data from one table into a new table . Can use `IN`, `AS` operators alongside.
 
 ```sql
-SELECT column1, column2, column3, ...    \\*
+SELECT column1, column2, column3, ...    -- *
 INTO newtable [IN externaldb]
 FROM oldtable
 WHERE condition;
@@ -130,8 +130,8 @@ To insert multiple rows of data
 ```sql
 INSERT INTO Customers (column1, column2, column3, ...) 
 VALUES (value11, value12, value13, ...),
-(value21, value22, value23, ...),
-(value31, value32, value33, ...);
+       (value21, value22, value23, ...),
+       (value31, value32, value33, ...);
 ```
 
 **4. INSERT INTO SELECT**\
@@ -544,7 +544,7 @@ Between DATES :
 ```sql
 SELECT * FROM table_name
 WHERE column_name BETWEEN #MM/DD/YYYY# AND #MM/DD/YYYY#;
-                        //'YYYY-MM-DD' AND 'YYYY-MM-DD';
+                        --'YYYY-MM-DD' AND 'YYYY-MM-DD';
 ```
 
 **8. AS (Alias) :**\
@@ -646,8 +646,8 @@ CREATE TABLE table_name (
     column3 datatype,
     ....
 
-    //UNIQUE (column1)
-    //CONSTRAINT constraint_name UNIQUE (column1, column2) 
+    -- UNIQUE (column1)
+    -- CONSTRAINT constraint_name UNIQUE (column1, column2) 
 );
 ```
 
@@ -658,7 +658,7 @@ To give a name to constraint name :
 ALTER TABLE table_name
 ADD UNIQUE (column1, column2, ....);
 
-// ADD CONSTRAINT constraint_name UNIQUE (column1, column2);
+-- ADD CONSTRAINT constraint_name UNIQUE (column1, column2);
 ```
 ```sql
 ALTER TABLE table_name
@@ -673,14 +673,15 @@ A table can have only ONE primary key; and in the table, this primary key can co
 CREATE TABLE table_name (
     column1 datatype NOT NULL PRIMARY KEY
 
-    //PRIMARY KEY (column1)
-    //CONSTRAINT constraint_name PRIMARY KEY (column1,column2)
+    -- PRIMARY KEY (column1)
+    -- CONSTRAINT constraint_name PRIMARY KEY (column1,column2)
 );
 ```
 ```sql
 ALTER TABLE table_name
 ADD PRIMARY KEY (column_name);
-//ADD CONSTRAINT constraint_name PRIMARY KEY (column1, column2);
+
+-- ADD CONSTRAINT constraint_name PRIMARY KEY (column1, column2);
 ```
 ```sql
 ALTER TABLE table_name
@@ -699,22 +700,22 @@ CREATE TABLE table1 (
     PRIMARY KEY (column1),
     FOREIGN KEY (column2) REFERENCES table2(column2)
 
-    //CONSTRAINT constraint_name FOREIGN KEY (column2)
-REFERENCES table2(column2)
+    -- CONSTRAINT constraint_name FOREIGN KEY (column2)
+    -- REFERENCES table2(column2)
 );
 ```
 
 ```sql
 ALTER TABLE table1
 ADD FOREIGN KEY (column2) REFERENCES table2(column2);
-//ADD CONSTRAINT constraint_name
-FOREIGN KEY (column2) REFERENCES table2(column2);
+-- ADD CONSTRAINT constraint_name
+-- FOREIGN KEY (column2) REFERENCES table2(column2);
 ```
 ```sql
 ALTER TABLE table1
 DROP FOREIGN KEY constraint_name;
 
-//DROP CONSTRAINT constraint_name;
+-- DROP CONSTRAINT constraint_name;
 ```
 
 **5. CHECK**\
@@ -726,7 +727,7 @@ CREATE TABLE table_name (
 column1 datatype NOT NULL,
 CHECK (column1 >= value)
 
-//CONSTRAINT constraint_name CHECK (column1 >= value1 AND column2 ='value2')
+-- CONSTRAINT constraint_name CHECK (column1 >= value1 AND column2 ='value2')
 );
 ```
 
@@ -734,7 +735,7 @@ CHECK (column1 >= value)
 ALTER TABLE table_name
 ADD CHECK (column_name>=18);
 
-//ADD CONSTRAINT constraint_name CHECK (column1 >= value1 AND column2 ='value2');
+-- ADD CONSTRAINT constraint_name CHECK (column1 >= value1 AND column2 ='value2');
 ```
 ```sql
 ALTER TABLE table_name
@@ -756,9 +757,9 @@ ALTER TABLE table_name
 ALTER column_name SET DEFAULT 'default_value';
 
 
-//ALTER TABLE table_name
-ADD CONSTRAINT constraint_name
-DEFAULT 'default_name' FOR column_name;
+-- ALTER TABLE table_name
+-- ADD CONSTRAINT constraint_name
+-- DEFAULT 'default_name' FOR column_name;
 
 ```
 To drop default constraint:
@@ -780,8 +781,8 @@ ALTER TABLE table_name AUTO_INCREMENT=value;
 ```
 **8. DATE DATATYPE**\
 DATE - format YYYY-MM-DD\
-DATETIME - format: YYYY-MM-DD HH:MI:SS\
-TIMESTAMP - format: YYYY-MM-DD HH:MI:SS\
+DATETIME - format: YYYY-MM-DD HH:MM:SS\
+TIMESTAMP - format: YYYY-MM-DD HH:MM:SS\
 YEAR - format YYYY or YY
 
 
@@ -835,7 +836,7 @@ Note : Can use `*` symbol instead of column_name. If you specify a column name i
 SELECT COUNT(column_name)
 FROM table_name
 WHERE condition;               
- //optional
+--optional
 ```
 
 **Use an Alias :**\
