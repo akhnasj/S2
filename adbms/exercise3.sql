@@ -138,9 +138,10 @@ INNER JOIN STUDENT ON GRADE_REPORT.grade=STUDENT.student_number
 WHERE STUDENT.class = 4 AND STUDENT.major = "CS";
 
 -- 10
-INSERT INTO STUDENT VALUES ('Johnson',25,1,'Math');    				  -- A 
-UPDATE STUDENT SET class = 2 WHERE name = "Smith";	   				  -- B
+set sql_safe_updates = 0;
+INSERT INTO STUDENT VALUES ('Johnson',25,1,'Math'); 				  -- A 
+UPDATE STUDENT SET class = 2 WHERE name = "Smith";   				  -- B
 INSERT INTO COURSE VALUES ('Knowledge Engineering','CS4390',3,'CS');  -- C 
-DELETE FROM STUDENT WHERE name = "Smith" AND student_number = 17;
+DELETE FROM STUDENT WHERE name = "Smith" AND student_number = 17;     -- D
 
 
