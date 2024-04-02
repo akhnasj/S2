@@ -33,7 +33,16 @@ WHERE PdtId = NEW.PdtId ;
 
 INSERT INTO Product VALUES (1, 'Pencil', 25, 100);
 INSERT INTO Sale VALUES (55, 'England');
-INSERT INTO SaleItem VALUES (55, 1, 20);
+INSERT INTO SaleItem VALUES (55, 1, 30);
+
+INSERT INTO Product VALUES (2, 'Book', 45, 50);
+INSERT INTO Sale VALUES (78, 'Paris');
+INSERT INTO SaleItem VALUES (78, 2, 30);
+
+INSERT INTO Product VALUES (3, 'Bag', 110, 120);
+INSERT INTO Sale VALUES (33, 'Belgium');
+INSERT INTO SaleItem VALUES (55, 3, 20);
+
 
 SELECT * FROM Product;
 SELECT * FROM Sale;
