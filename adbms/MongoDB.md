@@ -93,7 +93,7 @@ Remember, MongoDB is schema-less, meaning the documents in a single collection d
    documents = [{"name": "Alice", "age": 25}, {"name": "Bob", "age": 35}]
    result = collection.insert_many(documents)
    ```
-   `OR`
+    `OR`
 
    ```python
     # Insert a single document
@@ -141,7 +141,7 @@ Remember, MongoDB is schema-less, meaning the documents in a single collection d
        print(doc)
    ```
 
-   `OR`
+    `OR`
 
    ````js
    // Returns the first match
@@ -167,7 +167,7 @@ Remember, MongoDB is schema-less, meaning the documents in a single collection d
    update = {"$inc": {"age": 1}}  # Increment the age field by 1
    result = collection.update_many(filter, update)
    ```
-   `OR`
+    `OR`
 
    ```js
    // Updates one field
@@ -207,7 +207,7 @@ Remember, MongoDB is schema-less, meaning the documents in a single collection d
    filter = {"age": {"$gte": 40}}  # Delete documents where age is greater than or equal to 40
    result = collection.delete_many(filter)
    ```
-   `OR`
+    `OR`
 
    ```js
    // Deletes the first match
@@ -227,7 +227,7 @@ Remember, MongoDB is schema-less, meaning the documents in a single collection d
 | Count Documents | Returns the count of documents in the collection | `count = collection.count_documents({})` |
 | Limit Number of Documents | Returns a specified number of documents | `cursor = collection.find().limit(5)` |
 | Skip Specified Number of Documents | Skips over a specified number of documents in the result | `cursor = collection.find().skip(5)` |
-| Query for a Document | Returns the first document that matches the filter | `document = collection.find_one({"age": {"$gt": 20}})` |
+| Query for a Document | Returns the first document that matches the filter | `document = collection.find_one({"age": {"$gt": 20}})`
 
 
 # MongoDB Query Operators
@@ -237,6 +237,7 @@ There are many query operators that can be used to compare and reference documen
 The following operators can be used in queries to compare values:
 
 | Operators | Description |
+|-----------|-------------|
 |`$eq` | Values are equal |
 |`$ne` | Values are not equal |
 |`$gt` | Value is greater than another value |
@@ -249,6 +250,7 @@ The following operators can be used in queries to compare values:
 The following operators can logically compare multiple queries.
 
 | Operators | Description |
+|-----------|-------------|
 |`$and` | Returns documents where both queries match |
 |`$or` | Returns documents where either query matches |
 |`$nor`| Returns documents where both queries fail to match |
@@ -258,6 +260,7 @@ The following operators can logically compare multiple queries.
 The following operators assist in evaluating documents.
 
 | Operators | Description |
+|-----------|-------------|
 |`$regex` | Allows the use of regular expressions when evaluating field values |
 |`$text` | Performs a text search |
 |`$where` | Uses a JavaScript expression to match documents |
@@ -269,6 +272,7 @@ There are many update operators that can be used during document updates.
 The following operators can be used to update fields:
 
 | Operators | Description | 
+|-----------|-------------|
 |`$currentDate` | Sets the field value to the current date |
 |`$inc` | Increments the field value |
 |`$rename`| Renames the field |
@@ -279,6 +283,7 @@ The following operators can be used to update fields:
 The following operators assist with updating arrays.
 
 | Operators | Description |
+|-----------|-------------|
 |`$addToSet` | Adds distinct elements to an array |
 |`$pop` | Removes the first or last element of an array |
 |`$pull` | Removes all elements from an array that match the query |
