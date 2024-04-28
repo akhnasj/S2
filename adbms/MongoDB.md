@@ -29,25 +29,25 @@ MongoDB stores data in flexible documents. Instead of having multiple tables you
 # CRUD
 CRUD stands for Create, Read, Update, and Delete. These are the four basic operations that can be performed with most traditional database systems and they are also used in MongoDB.
 
-## Create
+## 1. Create
 The `db.collection.insert()` method is used to add new documents to a collection.
 ```js
     db.collection('collectionName').insertOne({ key: 'value' });
 ```
 
-## Read
+## 2. Read
 The `db.collection.find()` method is used to retrieve documents from a collection. This method returns a cursor to the results, however, you can easily convert it to an array of documents.
 ```js
     db.collection('collectionName').find({ key: 'value' });
 ```
 
-## Update
+## 3. Update
 The `db.collection.update()` method is used to update documents in a collection. The following example updates the first document where key equals value.
 ```js
     db.collection('collectionName').updateOne({ key: 'value' }, { $set: { key: 'new value' } });
 ```
 
-## Delete
+## 4. Delete
 The `db.collection.remove()` method is used to delete documents from a collection.
 ```js
     db.collection('collectionName').deleteOne({ key: 'value' });
