@@ -233,7 +233,7 @@ Remember, MongoDB is schema-less, meaning the documents in a single collection d
 # MongoDB Query Operators
 There are many query operators that can be used to compare and reference document fields.
 
-## Comparison
+### 1. Comparison
 The following operators can be used in queries to compare values:
 
 | Operators | Description |
@@ -246,7 +246,7 @@ The following operators can be used in queries to compare values:
 |`$lte` | Value is less than or equal to another value |
 |`$in`| Value is matched within an array |
 
-## Logical
+### 2. Logical
 The following operators can logically compare multiple queries.
 
 | Operators | Description |
@@ -256,7 +256,7 @@ The following operators can logically compare multiple queries.
 |`$nor`| Returns documents where both queries fail to match |
 |`$not` | Returns documents where the query does not match |
 
-## Evaluation
+### 3. Evaluation
 The following operators assist in evaluating documents.
 
 | Operators | Description |
@@ -268,7 +268,7 @@ The following operators assist in evaluating documents.
 # MongoDB Update Operators
 There are many update operators that can be used during document updates.
 
-## Fields
+### 1. Fields
 The following operators can be used to update fields:
 
 | Operators | Description | 
@@ -279,7 +279,7 @@ The following operators can be used to update fields:
 |`$set` | Sets the value of a field |
 |`$unset` | Removes the field from the document |
 
-## Array
+### 2. Array
 The following operators assist with updating arrays.
 
 | Operators | Description |
