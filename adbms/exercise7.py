@@ -63,7 +63,6 @@ for student in female_toppers :
 for student in collection.find({"mark":{"$gt":80,"$lt":90}}) :
     print_details(student)
 
-
 # 7
 for student in collection.find({"name.fname":{"$regex":"^V"}}) :
     print_details(student)
