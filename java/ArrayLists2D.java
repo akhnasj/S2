@@ -8,6 +8,7 @@ public class ArrayLists2D {
 
         ArrayList<ArrayList<String>> groceryList = new ArrayList();
 
+
         ArrayList<String> bakeryList = new ArrayList();
         bakeryList.add("pizza");
         bakeryList.add("donuts");
