@@ -6,12 +6,14 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Statement;
 
 public class Signup2 extends JFrame implements ActionListener {
     JComboBox comboBox1, comboBox2, comboBox3, comboBox4, comboBox5;
@@ -33,7 +35,7 @@ public class Signup2 extends JFrame implements ActionListener {
 
         this.formNo = first;
 
-        // Page Details
+        // Page 2
         JLabel l1 = new JLabel("Page 2");
         l1.setFont(new Font("Raleway", Font.BOLD, 18));
         l1.setBounds(380, 30, 600, 40);
@@ -206,8 +208,47 @@ public class Signup2 extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        String religion = (String) comboBox1.getSelectedItem();
+        String category = (String) comboBox2.getSelectedItem();
+        String income = (String) comboBox3.getSelectedItem();
+        String education = (String) comboBox4.getSelectedItem();
+        String occupation = (String) comboBox5.getSelectedItem();
+
+        String PAN = textPAN.getText();
+        String aadhar = textAadhar.getText();
+
+        String sc = "";
+        if(r1.isSelected()){
+            sc = "Yes";
+        }else if (r2.isSelected()){
+            sc = "No";
+        }
+
+        String ea = "";
+        if(e1.isSelected()){
+            ea = "Yes";
+        }else if (e2.isSelected()){
+            ea = "No";
+        }
+
+        try {
+            if (textPAN.getText().equals("") || textAadhar.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Fill all the fields");
+            } else {
+                Conn c1 = new Conn();
+                String q = "insert into signup_two values('"+formNo+"', '"+religion+"', '"+category+"', '"+income+"', '"+education+"', '"+occupation+"', '"+PAN+"', '"+aadhar+"', '"+sc+"', '"+ea+"')";
+                c1.statement.executeUpdate(q);
+                new Signup3(formNo);
+                setVisible(false);
+            }
+            
+        } catch (Exception E) {
+            E.printStackTrace();
+        }
+     
     }
+
+
 
     public static void main(String[] args) {
         new Signup2("");
