@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Statement;
+
 
 public class Signup2 extends JFrame implements ActionListener {
     JComboBox comboBox1, comboBox2, comboBox3, comboBox4, comboBox5;
