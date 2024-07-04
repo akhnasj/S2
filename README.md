@@ -101,3 +101,19 @@ and **this** is not bold.
 ```
 
 Renders without Markdown formatting.
+
+## General Comment Markers
+**INFO** : General information or explanations about the code.\
+**TODO** : Tasks or items that need to be completed.
+FIXME: Parts of the code that are broken and need fixing.\
+
+**NOTE** : Important notes or caveats to be aware of.\
+
+**DEBUG** : 
+Debugging statements or temporary code used for troubleshooting.\
+
+**HACK** : Workarounds or less-than-ideal solutions that need to be addressed later.\
+
+**WARNING** : Potential issues or risky parts of the code.\
+
+**OPTIMIZE** : Areas where the code can be improved for better performance or efficiency.
