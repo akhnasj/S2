@@ -6,21 +6,21 @@ public class ArrayLists2D {
         // 2D ArrayList : a dynamic list of lists
         // You can change the size of these lists during runtime
 
-        ArrayList<ArrayList<String>> groceryList = new ArrayList();
+        ArrayList<ArrayList<String>> groceryList = new ArrayList<ArrayList<String>>();
 
 
-        ArrayList<String> bakeryList = new ArrayList();
+        ArrayList<String> bakeryList = new ArrayList<String>();
         bakeryList.add("pizza");
         bakeryList.add("donuts");
         bakeryList.add("garlic bread");
         
 
-        ArrayList<String> produceList = new ArrayList();
+        ArrayList<String> produceList = new ArrayList<String>();
         produceList.add("tomatoes");
         produceList.add("zucchini");
         produceList.add("peppers");
 
-        ArrayList<String> drinksList = new ArrayList();
+        ArrayList<String> drinksList = new ArrayList<String>();
         drinksList.add("soda");
         drinksList.add("coffee");
 

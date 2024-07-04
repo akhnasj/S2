@@ -9,7 +9,7 @@ public class Arrays {
            cars[2] = "Tesla";
         */
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < cars.length; i++) {  // car.length = 3
             System.out.println(cars[i]);
         }
 

@@ -14,14 +14,16 @@ public class ArrayLists {
         food.add("hotdog");
         food.add("hamburger");
 
-        food.set(0,"sushi");        // replacing an element
-        food.remove(2);                     // removing an element
-        food.clear();                             // clear the ArrayList
+        // food.set(0,"sushi");        // replacing an element
+        // food.remove(2);                     // removing an element
+        // food.clear();                             // clear the ArrayList
 
         
-        for (int i = 0; i < food.size(); i++) {
-            System.out.println(food.get(i));
-        }
+        // for (int i = 0; i < food.size(); i++) {
+        //     System.out.println(food.get(i));
+        // }
+
+        System.out.println(food);
 
     }
 }

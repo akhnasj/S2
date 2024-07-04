@@ -6,7 +6,7 @@ public class Expressions {
         // operators = + - * / %
 
         int friends = 10;
-        friends = friends + 1;      // friends ++;
+        friends = friends + 1;      // friends ++ or friends --
         System.out.println(friends);
 
         int enemy = friends / 3;    // result will be integer

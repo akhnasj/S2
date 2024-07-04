@@ -3,7 +3,7 @@ public class ForLoop {
         
         // for loop executes a block of code a limited amount of times
 
-        for (int i = 0; i <= 10; i++) {
+        for (int i = 0; i <= 10; i++) {    // i++ or i -= 2
             System.out.println(i);
         }
     }

@@ -8,7 +8,7 @@ public class UserInput {
 
             System.out.println("How old are you?");
             int age = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine();      // To avoid the problem of having nextLine() after nextInt()
 
             System.out.println("What is your favourite food?");
             String food = scanner.nextLine();

@@ -3,7 +3,7 @@ public class IfElse {
         
         int age = 75;
 
-        if (age >= 75) {
+        if (age == 75) {
             System.out.println("Ok Boomer!");
         }
         else if (age >= 18) {

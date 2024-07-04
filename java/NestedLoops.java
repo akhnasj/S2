@@ -11,7 +11,6 @@ public class NestedLoops {
 
         System.out.println("Enter # of rows: ");;
         rows = scanner.nextInt();
-
         System.out.println("Enter # of columns: ");
         columns = scanner.nextInt();
 
