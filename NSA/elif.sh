@@ -1,6 +1,6 @@
 #!/bin/bash
 
-count=10
+count=8
 
 if [ $count -lt 9 ]
 then 
