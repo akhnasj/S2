@@ -13,7 +13,7 @@ Permissions are represented by three digits (0-7) for each user type (**owner,  
 
 ### 2. Using Symbolic Representation :
        chmod [user][permission][permission] file
-User Classes : **u, g, o, a** | Operation : **+, -, =** | Permission Attributes : **r, w, x**
+*User Classes* : **u, g, o, a** | *Operation* : **+, -, =** | *Permission Attributes* : **r, w, x**
 
 - `chmod g+rw filename.txt`
 - `chmod u-x filename.txt`
