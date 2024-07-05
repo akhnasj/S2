@@ -8,11 +8,7 @@ Read : **4**\
 Write : **2**\
 Execute : **1**
 
-- `chmod 644 filename.txt`\
-Owner: Read (4) + Write (2) = 6\
-Group: Read (4)\
-Others: Read (4)\
-This sets the permissions to -rw-r--r--.
+- `chmod 644 filename.txt` : This sets the permissions to -rw-r--r--.
 
 - `chmod 660 filename.txt` : Others no permissions
 - `chmod 777 filename.txt` : All groups all permission
