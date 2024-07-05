@@ -1,0 +1,21 @@
+
+-- shows all shells available on system
+$ cat /etc/shells
+
+-- path of bash shell
+$ which bash
+
+$ clear
+$ cd Desktop
+$ ls
+$ mkdir NSA
+
+-- to create a new file
+$ touch filename.txt(sh)
+
+-- list in details (shows permission etc)
+$ ls -al
+$ ls -l
+
+-- set permissions(executable : +x)
+chmod +x filename.sh
