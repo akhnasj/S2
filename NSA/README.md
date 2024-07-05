@@ -4,7 +4,7 @@ Changes permissions of a file or directory
 ### 1. Numeric Mode (Octal Representation) :
 Permissions are represented by three digits (0-7) for each user type (**owner,  group,  others**).
 
-Read : **4** | Write : **2** |Execute : **1**
+*Read* : **4** | *Write* : **2** | *Execute* : **1**
 
 - `chmod 644 filename.txt` : This sets the permissions to -rw-r--r--.
 
