@@ -1,7 +1,7 @@
 
 ## `chmod` 
 Changes permissions of a file or directory
-### Numeric Mode (Octal Representation) :
+### 1. Numeric Mode (Octal Representation) :
 Permissions are represented by three digits (0-7) for each user type (**owner,  group,  others**).
 
 Read : **4**\
@@ -17,11 +17,9 @@ This sets the permissions to -rw-r--r--.
 - `chmod 660 filename.txt` : Others no permissions
 - `chmod 777 filename.txt` : All groups all permission
 
-### Using Symbolic Representation :
+### 2. Using Symbolic Representation :
        chmod [user][permission][permission] file
-User Classes : **u, g, o, a**\
-Operation : **+, -, =** : \
-Permission Attributes : **r, w, x**
+User Classes : **u, g, o, a** | Operation : **+, -, =** | Permission Attributes : **r, w, x**
 
 - `chmod g+rw filename.txt`
 - `chmod u-x filename.txt`
