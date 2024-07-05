@@ -10,12 +10,18 @@ $ cd Desktop
 $ ls
 $ mkdir NSA
 
--- to create a new file
-$ touch filename.txt(sh)
-
 -- list in details (shows permission etc)
 $ ls -al
 $ ls -l
 
 -- set permissions(executable : +x)
 chmod +x filename.sh
+
+-- to create a new file
+$ touch filename.sh(txt)
+$ nano filename.sh(txt)
+
+-- run
+$ ./filename.sh (set executable permissions)
+$ sh filename.sh
+$ bash filename.sh
