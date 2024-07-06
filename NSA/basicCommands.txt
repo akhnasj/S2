@@ -35,4 +35,6 @@ $ sh filename.sh
 $ bash filename.sh
 
 --to terminate a process
-$ Ctrl + C
+$ Ctrl + C (kill/terminate the process)
+$ Ctrl + Z (temporarily suspends the process)
+$ Ctrl + D (end of input)
