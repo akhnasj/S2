@@ -2,7 +2,7 @@
 
 # skips current iteration / remaining statements of loop
 
-for (( i=0; i<10; i++ ))   # bash
+for (( i=0; i<10; i++ ))   
 do 
     if [ $i -eq 3 ] || [ $i -eq 7 ]
     then 
@@ -13,3 +13,5 @@ done
 
 
 # doesnot print 3 and 7
+
+# bash
