@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# redirects the text file to shell
+
 while read line
 do
     echo $line              # "$line"
