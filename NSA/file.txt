@@ -1,6 +1,3 @@
 I am rewriting this file
 
 I am appending this file
-
-
-
