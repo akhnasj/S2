@@ -2,8 +2,8 @@
 
 age=30
 
-# -- can use "$age" if needed
-# if [ $age -gt 1 ] || [ $age -lt 15 ]
+
+# if [ $age -gt 1 ] || [ $age -lt 15 ]   # "$age"
 
 # -- run bash or.sh
 # if [[ $age -gt 1 || $age -lt 15 ]]
