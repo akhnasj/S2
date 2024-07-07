@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# grep stands for "Global Regular Expression Print", used to search text or search the given file for lines having a match to the given strings or words.
+
 echo "Enter file to search from"
 read file
 
