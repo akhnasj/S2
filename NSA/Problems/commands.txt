@@ -41,3 +41,5 @@ wc - count the results
 which - find the path of a command
 who, whoami - current user
 zip - compress files into a ZIP archive
+
+
