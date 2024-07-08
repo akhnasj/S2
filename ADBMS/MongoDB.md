@@ -32,7 +32,7 @@ CRUD stands for Create, Read, Update, and Delete. These are the four basic opera
 ## 1. Create
 The `db.collection.insert()` method is used to add new documents to a collection.
 ```js
-    db.collection('collectionName').insertOne({ key: 'value' });
+    db.collection('collectionName').insert_one({ key: 'value' });
 ```
 
 ## 2. Read
@@ -44,13 +44,13 @@ The `db.collection.find()` method is used to retrieve documents from a collectio
 ## 3. Update
 The `db.collection.update()` method is used to update documents in a collection. The following example updates the first document where key equals value.
 ```js
-    db.collection('collectionName').updateOne({ key: 'value' }, { $set: { key: 'new value' } });
+    db.collection('collectionName').update_one({ key: 'value' }, { $set: { key: 'new value' } });
 ```
 
 ## 4. Delete
 The `db.collection.remove()` method is used to delete documents from a collection.
 ```js
-    db.collection('collectionName').deleteOne({ key: 'value' });
+    db.collection('collectionName').delete_one({ key: 'value' });
 ```
 
 Remember, MongoDB is schema-less, meaning the documents in a single collection do not need to have the same set of fields and the data type for a field can differ across documents within a collection.
@@ -97,7 +97,7 @@ Remember, MongoDB is schema-less, meaning the documents in a single collection d
 
    ```python
     # Insert a single document
-    db.posts.insertOne({
+    db.posts.insert_one({
     title: "Post Title 1",
     body: "Body of post.",
     category: "News",
@@ -107,7 +107,7 @@ Remember, MongoDB is schema-less, meaning the documents in a single collection d
     })
 
     # Insert multiple documents
-    db.posts.insertMany([  
+    db.posts.insert_many([  
         {
             title: "Post Title 2",
             body: "Body of post.",
@@ -145,10 +145,10 @@ Remember, MongoDB is schema-less, meaning the documents in a single collection d
 
    ````js
    // Returns the first match
-   db.posts.findOne()
+   db.posts.find_one()
 
    // Accepts one parameter
-   db.posts.find( {category: "News"} )
+   db.posts.find({category: "News"})
 
    // Accepts a second parameter : "projection"
    db.posts.find({}, {title: 1, date: 1})
