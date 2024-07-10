@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+
 read -p "Enter the directory: " dir
 if [ -d "$dir" ]
 then
@@ -35,6 +37,6 @@ then
 else
     echo "$dir is not a directory"
 fi
-#
+
 
 
