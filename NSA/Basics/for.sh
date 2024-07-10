@@ -4,8 +4,8 @@
 # for i in 1 2 3 4 5
 
 # -- run bash 
-# for i in {0..20} 
-# for i in {0..20..2} 
+# for i in {0..20}; 
+# for i in {0..20..2}; 
  
 # for (( i=0; i<5; i++ ))
 

@@ -18,7 +18,7 @@ else
     echo "Both strings are equal"
 fi
 
-# Compare lexographically
+# -- Compare lexographically
 # if ["$s1" \< "$s2"]
 
 
