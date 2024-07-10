@@ -1,6 +1,9 @@
 #!/bin/bash
 
 
+
+# Positional Arguments
+
 if [ $# -eq 1 ]
 then
     if [ -f $1 ]
@@ -16,3 +19,18 @@ else
     echo "Please enter a file name"
 fi
 
+
+
+
+
+
+read -p "Enter a file name to reverse: " file
+if [ -f "$file" ]
+then  
+    echo "Reverse of $file: "
+    cat $file
+    echo "\n->\n"
+    tac $file
+else
+    echo "File doesnot exist!!"
+fi
