@@ -29,7 +29,9 @@ echo "Factorial : $fact"
 # -- for
 # for (( i=1; i<=$n; i++))              # bash
 # for (( i=$n;i>0;i-- ))
-for i in $(seq $n 1)
+
+# for i in $(seq $n -1 1)
+for i in $(seq 1 $n)
 do
     fact=$(( fact*i ))
 done
