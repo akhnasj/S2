@@ -2,6 +2,22 @@
 
 
 
+
+read -p "Enter a file name to reverse: " file
+if [ -f "$file" ]
+then  
+    echo "Reverse of $file: "
+    cat $file
+    echo "\n->\n"
+    tac $file
+else
+    echo "File doesnot exist!!"
+fi
+
+
+
+
+
 # Positional Arguments
 
 if [ $# -eq 1 ]
@@ -23,14 +39,3 @@ fi
 
 
 
-
-read -p "Enter a file name to reverse: " file
-if [ -f "$file" ]
-then  
-    echo "Reverse of $file: "
-    cat $file
-    echo "\n->\n"
-    tac $file
-else
-    echo "File doesnot exist!!"
-fi
