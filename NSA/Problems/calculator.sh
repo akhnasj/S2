@@ -8,16 +8,16 @@ do
     
     case $op in 
         "+")
-            res=$( echo "$a+$b" | bc )
+            res=$(echo "$a + $b" | bc)
             ;;
         "-")
-            res=$(( a-b ))
+            res=$(echo "$a - $b" | bc)
             ;;
         "*")
-            res=$(( a*b ))
+            res=$(echo "$a * $b" | bc)
             ;;
         "/")
-            res=$(( a/b ))
+            res=$(echo "scale=2; $a / $b" | bc)
             ;;
           *)
             exit
