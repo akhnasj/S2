@@ -4,12 +4,14 @@
 # type in terminal 
 
 # -- prints out all variables in terminal, not read-only
-# declare -p           
+declare -p           
 
 # -- declares variables directly
-# declare myvariable
-# declare myvariable=22
+declare myvariable
+declare myvariable=22
 
+
+# or
 
 
 declare -r pwdfile=/etc/passwd 
