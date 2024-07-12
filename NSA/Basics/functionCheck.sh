@@ -6,6 +6,7 @@ function funCheck() {
 }
 
 
+
 x="I love MAC"
 echo $x
 
