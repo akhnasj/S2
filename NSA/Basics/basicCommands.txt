@@ -1,0 +1,41 @@
+
+-- shows all shells available on system
+$ cat /etc/shells
+
+-- path of bash shell
+$ which bash
+
+$ clear
+$ cd Desktop
+$ ls
+$ mkdir NSA
+
+-- list in details (shows permission etc)
+$ ls -al
+$ ls -l
+
+-- set permissions(executable : +x)
+chmod +x filename.sh
+
+-- to create a new file
+$ touch filename.sh(txt)
+$ nano filename.sh(txt)
+
+-- create and write a new file within terminal
+$ cat > file.txt
+$ cat >> file.txt (also appends existing file)
+$ cat file.txt (shows the content)
+
+$ echo "Hello" > file.txt
+$ echo "Hello" >> file.txt
+
+-- run
+$ ./filename.sh (set executable permissions)
+$ sh filename.sh
+$ bash filename.sh
+
+--to terminate a process
+$ Ctrl + C (kill/terminate the process)
+$ Ctrl + Z (temporarily suspends the process)
+$ Ctrl + D (end of input)
+
