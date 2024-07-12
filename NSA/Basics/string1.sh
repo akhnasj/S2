@@ -6,9 +6,9 @@ read s1
 echo "Enter second string"
 read s2
 
-# case-sensitive
 
-if [ "$s1" = "$s2" ]       # '==' operator works in bash
+# case-sensitive
+if [ "$s1" = "$s2" ]                # '==' operator works in bash
 then
     echo "Strings match"
 else 
