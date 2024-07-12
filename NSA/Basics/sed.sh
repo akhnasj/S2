@@ -2,6 +2,7 @@
 
 # sed stands for "Stream Editor" and is used to perform basic text transformations on an input stream (a file or input from a pipeline).
 
+
 echo "Enter the file to substitute using sed"
 read file
 
@@ -14,5 +15,7 @@ else
     echo "$file doesnot exist"
 fi
 
-# -- -i to make permanent changes to the file; use cases right, as case sensitive
+
+
+# -- -i to make permanent changes to the file; use cases right, as it is case sensitive
 # sed -i 's/linux/unix/g' $file          
