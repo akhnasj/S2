@@ -16,6 +16,7 @@ else
 fi
         
 
+
 # -i removes case-sensitivity
 # -n gives the line number
 # -c gives the word count
