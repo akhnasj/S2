@@ -4,6 +4,8 @@
 # 1 represents standard output
 # 2 represents standard error
 
+
+
 # -- ls -al is the STDOUT command, so file2 will be empty
 ls -al 1>file1.txt 2>file2.txt
 
