@@ -5,7 +5,8 @@
 echo "Enter file name to check"
 read file
 
-if [ -f "$file" ]           # can put it in '[[ ]]'
+
+if [ -f "$file" ]               # can put it in '[[ ]]'
 then 
     echo "$file exists"
 else
