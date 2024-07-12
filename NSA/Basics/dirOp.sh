@@ -7,6 +7,7 @@
 # mkdir -p dir     
 
 
+
 # -- Check whether a directory exists
 
 echo "Enter a directory"
