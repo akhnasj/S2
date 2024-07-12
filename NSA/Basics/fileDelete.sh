@@ -7,6 +7,7 @@ echo "Enter the file to be deleted"
 read file
 
 
+
 if [ -f "$file" ]
 then 
     rm $file
