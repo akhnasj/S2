@@ -6,6 +6,7 @@ car=('BMW' 'Corvette' 'Honda' 'Rover')
 # unset car[2]
 # car[2]="Toyota"
 
+
 echo "${car[@]}"
 
 echo "${car[0]}"
