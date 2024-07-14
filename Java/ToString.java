@@ -1,6 +1,8 @@
-package toString;
 
-public class Main {
+
+import ToString.Car;
+
+public class ToString {
     public static void main(String[] args) {
         
         // toString() = special method that all objects inherit, 

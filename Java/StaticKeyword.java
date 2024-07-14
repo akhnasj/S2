@@ -1,6 +1,8 @@
-package StaticKeyword;
 
-public class Main {
+
+import StaticKeyword.Friend;
+
+public class StaticKeyword {
     public static void main(String[] args) {
         
         // static : modifier. A single copy of a variable/method is created and shared.
@@ -16,9 +18,12 @@ public class Main {
         //--- Can write ClassName.variable  (not Object.variable)
         //--- Access thorugh class that "owns" the static member
         //--- Accessing the static member(variable) using the object name is not recommended (f1.noOfFriends)
-        System.out.println(Friend.noOfFriends);
+        // System.out.println(Friend.noOfFriends);
 
         //--- Now, when static field is removed, and its int noOfFriends, every objects have their own copy of noOfFriends
         // System.out.println(f1.noOfFriends);
+
+        Friend.displayFriend();
+        // Math.round(a);
     }
 }

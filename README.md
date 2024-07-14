@@ -2,6 +2,8 @@
 
 In Markdown, which is the format commonly used for README files, you can use various elements to structure and format your text. Here's an overview of some additional syntaxes beyond headers (#) that you can use to make your README more informative and visually appealing:
 
+[Markdown More](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
 ## 1. Emphasis
 - **Bold** : To bold text, wrap it in two asterisks or underscores.
 \*\*bold text** or \_\_bold text__ renders as __bold text__.
