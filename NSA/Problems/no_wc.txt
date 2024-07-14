@@ -1,6 +1,0 @@
-a hello 
-b bye
-c 
-d
-e
-
