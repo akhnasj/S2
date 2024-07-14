@@ -1,0 +1,7 @@
+I am rewriting this file
+
+I am appending this file
+
+I am appending this text through fileOp.sh
+
+I am appending the same through cat command
