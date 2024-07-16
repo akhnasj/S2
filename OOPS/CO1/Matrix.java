@@ -5,8 +5,8 @@ public class Matrix {
     int cols;
     int[][] matrix;
 
-    public void readMatrix(Scanner sc) {
 
+    public void readMatrix(Scanner sc) {
         System.out.println("\nEnter the rows and columns: ");
         this.rows = sc.nextInt();
         this.cols = sc.nextInt();
@@ -19,6 +19,7 @@ public class Matrix {
             }
         }
     }
+
 
     public void sumMatrix(Matrix matrix1, Matrix matrix2){
         if (matrix1.rows != matrix2.rows || matrix1.cols != matrix2.cols){
@@ -36,6 +37,7 @@ public class Matrix {
         }
     }
 
+
     public void displayMatrix() {
         System.out.println("\nSum of matrices: ");
         for (int i = 0; i < rows; i++){     
@@ -45,6 +47,7 @@ public class Matrix {
             System.out.println();
         }
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -69,10 +72,10 @@ public class Matrix {
 // Overloaded Constructors
 
 public class Matrix {
-
     int rows;
     int cols;
     int[][] matrix;
+
 
     public Matrix(Scanner sc){
         System.out.println("\nEnter the no. of rows and columns: ");
@@ -87,6 +90,7 @@ public class Matrix {
             }
         }
     }
+
 
     public Matrix(Matrix matrix1, Matrix matrix2){
         if (matrix1.rows != matrix2.rows || matrix1.cols != matrix2.cols){
@@ -104,6 +108,7 @@ public class Matrix {
         display();
     }
 
+
     public void display() {
         System.out.println("\nSum of matrices are: ");
         for(int i = 0; i < this.rows; i++){
@@ -118,7 +123,6 @@ public class Matrix {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
 
         Matrix matrix1 = new Matrix(sc);
         Matrix matrix2 = new Matrix(sc);
