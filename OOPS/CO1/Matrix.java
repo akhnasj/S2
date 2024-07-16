@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 // Using Overloaded Constructors
 public class Matrix {
     int rows;
