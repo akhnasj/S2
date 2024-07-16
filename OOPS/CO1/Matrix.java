@@ -47,9 +47,7 @@ public class Matrix {
             }
             System.out.println();
         }
-    }
-    
-
+    }   
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -57,10 +55,7 @@ public class Matrix {
         Matrix matrix1 = new Matrix(sc);
         Matrix matrix2 = new Matrix(sc);
 
-        new Matrix(matrix1, matrix2);          // Matrix matrix3 = new Mat(matrix1, matrix2)
-
-
-        
+        new Matrix(matrix1, matrix2);          // Matrix matrix3 = new Mat(matrix1, matrix2)      
     }
 }
 
@@ -128,8 +123,7 @@ public class Matrix {
         Matrix matrix3 = new Matrix();
         matrix3.sumMatrix(matrix1, matrix2);
 
-        matrix3.displayMatrix();
-        
+        matrix3.displayMatrix();      
         
     }
 }
