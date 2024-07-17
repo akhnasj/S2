@@ -10,12 +10,15 @@ public class Complex{
         this.y = y;
     }
 
+    @Override
     public String toString(){
         return x +" + "+ y +"i";
     }
+
     public static Complex sum(Complex c1, Complex c2) {
         return new Complex(c1.x + c2.x, c1.y + c2.y);
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the real and imaginary part of number 1: ");
