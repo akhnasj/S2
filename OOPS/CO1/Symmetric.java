@@ -1,3 +1,5 @@
+// Read a matrix from the console and check whether it is symmetric or not.
+
 import java.util.Scanner;
 
 // Using Main function
