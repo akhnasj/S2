@@ -56,6 +56,7 @@ public class Employee {
         System.out.println("\nEnter the employee number to search: ");
         int input = sc.nextInt();
         System.out.println("Employee "+input+" is "+searchArray(input, employees));
+        s
     }
         
 }
