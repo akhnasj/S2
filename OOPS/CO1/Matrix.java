@@ -1,5 +1,7 @@
-import java.util.Scanner;
+// Read 2 matrices from the console and perform matrix addition. 
 
+
+import java.util.Scanner;
 // Using Methods
 public class Matrix {
     int rows;
