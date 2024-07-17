@@ -1,3 +1,5 @@
+// Search an element in an array. 
+
 package CO2;
 
 import java.util.Scanner;
