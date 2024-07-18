@@ -1,7 +1,6 @@
-import MethodOverriding.Animal;
-import MethodOverriding.Dog;
+package MethodOverriding;
 
-public class MethodOverriding {
+public class Main {
     public static void main(String[] args) {
         
         // method overriding : Declaring a method in sub class,

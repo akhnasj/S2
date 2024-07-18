@@ -1,8 +1,5 @@
-
-
-import VariableScope.DiceRoller;
-
-public class VariableScope {
+package VariableScope;
+public class Main {
     public static void main(String[] args) {
         // local = declared inside a method
         //         visible only to that method

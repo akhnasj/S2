@@ -1,7 +1,5 @@
-import Inheritance.Bicycle;
-import Inheritance.Car;
-
-public class Inheritance {
+package Inheritance;
+public class Main {
 
     // inheritance : the process where one class acquires, the attribute and methods of another
 

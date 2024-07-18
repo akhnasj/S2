@@ -1,8 +1,5 @@
-
-
-import OverloadedConstructors.Pizza;
-
-public class OverloadedConstructor {
+package OverloadedConstructors;
+public class Main {
     public static void main(String[] args) {
 
         // Bread, sauce, cheese, topping

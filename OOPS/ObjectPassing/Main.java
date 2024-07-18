@@ -1,9 +1,5 @@
-
-
-import ObjectPassing.Car;
-import ObjectPassing.Garage;
-
-public class ObjectPassing {
+package ObjectPassing;
+public class Main {
     public static void main(String[] args) {
         
         Garage garage = new Garage();
